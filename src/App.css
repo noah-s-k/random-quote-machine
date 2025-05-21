@@ -1,38 +1,83 @@
+:root {
+  --primary-color: green;
+}
+
 .App {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+}
+
+#quote-box {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 25px 45px 25px 45px;
+  width: 600px;
+  background-color: #fafafa;
+  margin: 0 auto;
+}
+
+#text-box {
+  margin: 20px;
+  color: var(--primary-color);
+  font-size: 32px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#quote-icon {
+  padding-right: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#author {
+  width: 100%;
+  text-align: right;
+  color: var(--primary-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#buttons {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 10px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+#new-quote {
+  font-size: 15px;
+  background-color: var(--primary-color);
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  padding: 0 20px 0 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#socials a {
+  color: var(--primary-color);
+
+  padding-right: 5px;
+  font-size: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#new-quote:hover, #socials a:hover {
+  opacity: 0.7;
+}
+.credits {
+  height: 0;
+  position: relative;
+  top: 35px;
+  display: block;
+  text-align: center;
+  width: 100%;
+  color: #efefef;
+}
+
+.credits a {
+  color: #efefef;
+  text-decoration: none;
+}
+
+.credits a:hover {
+  opacity: 0.7;
 }
