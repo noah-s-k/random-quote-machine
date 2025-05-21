@@ -18,7 +18,6 @@ class App extends React.Component {
         const response = await fetch("https://quoteslate.vercel.app/api/quotes/random");
         const data = await response.json();
         if (response.ok) {
-            console.log(data);
             this.setState({
                 quote: data.quote,
                 author: data.author
@@ -45,8 +44,8 @@ class App extends React.Component {
                     <p id="author">- {this.state.author}</p>
                     <div id="buttons">
                         <div id="socials">
-                            <a target="_blank" rel="noreferrer" href="https://twitter.com/intent/tweet"><FontAwesomeIcon icon={faSquareTwitter} /></a>
-                            <a target="_blank" rel="noreferrer" href="https://noah-kleinert.de"><FontAwesomeIcon icon={faLinkedin} /></a>
+                            <a id="tweet-quote" target="_blank" rel="noreferrer" href={`https://twitter.com/intent/tweet?text=\"${this.state.quote}\" -${this.state.author}&url=https://random-quote-machine-rho-nine.vercel.app`}><FontAwesomeIcon icon={faSquareTwitter} /></a>
+                            <a target="_blank" rel="noreferrer" href={`https://www.linkedin.com/shareArticle?text=\"${this.state.quote}\" -${this.state.author}&url=https://random-quote-machine-rho-nine.vercel.app`}><FontAwesomeIcon icon={faLinkedin} /></a>
                         </div>
                         <button id="new-quote" onClick={this.generateQuote}>New quote</button>
                     </div>
